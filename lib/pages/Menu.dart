@@ -3,6 +3,8 @@ import 'package:flutter_/Components/Colors.dart';
 import 'package:flutter_/pages/ListThing.dart';
 import 'package:flutter_/pages/PendingPage.dart';
 import 'package:flutter_/pages/ProfilePage.dart';
+import 'package:flutter_/pages/pieceAlugos.dart';
+import 'package:flutter_/pages/pieceKilapis.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -17,16 +19,25 @@ class Menu extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Maluga",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: ForegroundColor
+              Container(
+                child: Row(
+                  children: [
+                    //Image.asset("lib/assets/logoMaluga4Semfundo.png", width: 50, height: 50,),
+                    SizedBox(width: 5,),
+                    Text(
+                      "Maluga",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: ForegroundColor
+                      ),
+                    ),
+                  ],
                 ),
               ),
+        
               Container(child: Row(
                 children: [
-                  ElevatedButton.icon(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (build) => ProfilePage()));}, label: Icon(Icons.person, color: BaseColor,)),
+                  ElevatedButton.icon(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (build) => const ProfilePage()));}, label: Icon(Icons.person, color: BaseColor,)),
                   Padding(
                     padding: const EdgeInsets.only(left: 2),
                     child: IconButton(onPressed: (){}, icon: Icon(Icons.notifications, color: ForegroundColor,)),
@@ -52,10 +63,12 @@ class Menu extends StatelessWidget {
                 ),*/
           ]),
         ),
-        body: TabBarView(children: <Widget>[
+        body: const TabBarView(children: <Widget>[
           ListThing(),
           //AddThingPage(),
-          PendingPage(),
+          PieceAlugos()
+          //PieceKilapis()
+          //PendingPage(),
           //FeedPage()
         ]),
       ),

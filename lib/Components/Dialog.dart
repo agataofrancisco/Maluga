@@ -9,8 +9,8 @@ class Dialogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text("$title"),
-      content: Text("$content"),
+      title: Text(title),
+      content: Text(content),
       actions: botoes  
     );
   }

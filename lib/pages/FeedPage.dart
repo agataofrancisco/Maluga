@@ -12,8 +12,8 @@ class FeedPage extends StatelessWidget {
         context: context,
         builder: (BuildContext context){
           return AlertDialog(
-            title: Text("Paineis"),
-            content: Text("ACÇÃO A REALIZAR"),
+            title: const Text("Paineis"),
+            content: const Text("ACÇÃO A REALIZAR"),
             actions: [
               MyElevatedbutton(text: "ADICIONAR", action: (){
                 Navigator.of(context).pop();
@@ -33,7 +33,7 @@ class FeedPage extends StatelessWidget {
               onTap: () {
                 dialogo_();
               },
-              child: CardFeed(
+              child: const CardFeed(
                 name: "Paineis",
                 price: 200,
                 location: "Morro Bento",
@@ -46,7 +46,7 @@ class FeedPage extends StatelessWidget {
               onTap: () {
                 dialogo_();
               },
-              child: CardFeed(
+              child: const CardFeed(
                 name: "Paineis",
                 price: 200,
                 location: "Morro Bento",
@@ -59,7 +59,7 @@ class FeedPage extends StatelessWidget {
               onTap: () {
                 dialogo_();
               },
-              child: CardFeed(
+              child: const CardFeed(
                 name: "Paineis",
                 price: 200,
                 location: "Morro Bento",

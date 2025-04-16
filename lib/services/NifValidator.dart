@@ -7,6 +7,6 @@ import 'package:nif_validator/nif_validator.dart';
   if(result.isValid){
     return (result as NIFValidatorResponse).name;
   }else{
-    return "Nif inválido";
+    return "Nome não encontrado";
   }
 }

@@ -22,8 +22,8 @@ class _AddThingPageState extends State<AddThingPage> {
     TextEditingController pricocontroller = TextEditingController();
     TextEditingController  quantitycontroller = TextEditingController();
 
-    void _AddMaterial() async{
-      final db = await MalugaDatabase.instance;
+    void AddMaterial() async{
+      final db = MalugaDatabase.instance;
       //db.printTableData('materials');
       //PREPARING ALL DATA TO BE SENT TO THE DB
       final material = {
@@ -73,7 +73,6 @@ class _AddThingPageState extends State<AddThingPage> {
       );
       }
     }
-  
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -97,9 +96,8 @@ class _AddThingPageState extends State<AddThingPage> {
               MyElevatedbutton(
                 text: "Adicionar",
                 action: (){
-                  
-                  _AddMaterial();
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (build)=> Menu()));
+                  AddMaterial();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (build)=> const Menu()));
                 }
               )
             ],

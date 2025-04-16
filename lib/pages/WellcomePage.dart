@@ -13,7 +13,7 @@ class WellcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Seja bem vindo",
               style: TextStyle(
                 fontSize: 30,
@@ -23,16 +23,16 @@ class WellcomePage extends StatelessWidget {
             MyElevatedbutton(
               text: "Cadastrar Material", 
               action: (){
-                Navigator.push(context, MaterialPageRoute(builder: (build)=> AddThingPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (build)=> const AddThingPage()));
               }
             ),
             MyElevatedbutton(
               text: "Listar materiais", 
-              action: (){Navigator.push(context, MaterialPageRoute(builder: (build) => ListThing()));}
+              action: (){Navigator.push(context, MaterialPageRoute(builder: (build) => const ListThing()));}
             ),
             MyElevatedbutton(
               text: "Verificar Pendentes", 
-              action: (){Navigator.push(context, MaterialPageRoute(builder: (build) => PendingPage()));}
+              action: (){Navigator.push(context, MaterialPageRoute(builder: (build) => const PendingPage()));}
             )
           ],
         ),

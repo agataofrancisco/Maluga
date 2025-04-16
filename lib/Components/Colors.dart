@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
 
-final BaseColor = Colors.blue;
-final ForegroundColor = Colors.white;
+const BaseColor = Colors.amber;
+const ForegroundColor = Colors.black;

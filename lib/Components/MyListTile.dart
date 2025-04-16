@@ -29,8 +29,8 @@ class MylistTile extends StatelessWidget {
                           ),
                         ),
                         subtitle: Text(
-                          "${subtitulo}",
-                          style: TextStyle(
+                          subtitulo,
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),

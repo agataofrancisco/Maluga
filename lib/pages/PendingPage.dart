@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_/Components/Colors.dart';
 import 'package:flutter_/Components/MyElevatedButton.dart';
+import 'package:flutter_/pages/ListThing.dart';
 
 class PendingPage extends StatelessWidget {
-
   const PendingPage({super.key});
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +13,8 @@ class PendingPage extends StatelessWidget {
       context: context, 
       builder: (BuildContext context){
         return AlertDialog(
-          title: Text("Alugos pendentes"),
-          content: Text("5 PAINEIS"),
+          title: const Text("Alugos pendentes"),
+          content: const Text("5 PAINEIS"),
           actions: [
             MyElevatedbutton(text: "Devolvido", action: (){Navigator.of(context).pop();})
           ], 
@@ -40,8 +38,8 @@ class PendingPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
               child: Text(
                 "Alugos",
                 style: TextStyle(
@@ -162,8 +160,8 @@ class PendingPage extends StatelessWidget {
                 ),
               ),              
         
-              Padding(
-              padding: const EdgeInsets.all(10.0),
+              const Padding(
+              padding: EdgeInsets.all(10.0),
               child: Text(
                 "Kilapis",
                 style: TextStyle(

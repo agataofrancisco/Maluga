@@ -23,23 +23,23 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: CircleAvatar(
                 child: Text("A"),
               ),
             ),
-            Text("Nome:  "),
-            Text("Localização:"),
-            Text("Produtos no alugo: "),
-            Text("Produtos no Kilapi: "),
-            Text("Classificação:"),
+            const Text("Nome:  "),
+            const Text("Localização:"),
+            const Text("Produtos no alugo: "),
+            const Text("Produtos no Kilapi: "),
+            const Text("Classificação:"),
             MyElevatedbutton(
               text: "Adicionar Material",
               action: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (build)=> AddThingPage())
+                  MaterialPageRoute(builder: (build)=> const AddThingPage())
                 );
               }
             )

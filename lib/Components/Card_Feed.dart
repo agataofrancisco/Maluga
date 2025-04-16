@@ -26,24 +26,24 @@ class CardFeed extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Center(child: Icon(Icons.ice_skating,size: 300,)),
+              const Center(child: Icon(Icons.ice_skating,size: 300,)),
               Text(
                 name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25
                 ),
               ),
               Text(
                 price.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20
                 ),
               ),
               Text(
                 location,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20
                 )
