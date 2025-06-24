@@ -34,11 +34,11 @@ class _PieceAlugosState extends State<PieceAlugos> {
       future: _alugos,
       builder: (context, snapshot){
         if(snapshot.connectionState == ConnectionState.waiting){
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(color: BaseColor,),
           );
         }else if (snapshot.hasError){
-          return Center(child: Text("erro: ${snapshot.error}"),);
+          return Center(child: Text("erro:${snapshot.error}"),);
         }else if(snapshot.hasData || snapshot.data!.isEmpty){
           return const Emptyalugo();
         }else{
@@ -47,8 +47,8 @@ class _PieceAlugosState extends State<PieceAlugos> {
             body: Expanded(
               child: ListView.builder(
                 itemCount: Alugos_.length,
-                itemBuilder: (context
-                , index){
+                itemBuilder: (context,
+                index){
                   final Alugo = Alugos_[index];
                   return Column(
                     children: [
@@ -60,12 +60,12 @@ class _PieceAlugosState extends State<PieceAlugos> {
                         child: GestureDetector(
                           child: ListTile(
                             title: Text(Alugo.name_alugador,
-                            style: TextStyle(
+                            style: const TextStyle(
                             color: ForegroundColor,
                             fontWeight: FontWeight.bold
                           ),
                           ),
-                          trailing: Text(Alugo.date_return.toString() ),
+                          trailing: Text(Alugo. date_return.toString() ),
                           onTap: (){
                             print("ticado");
                           },

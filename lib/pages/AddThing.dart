@@ -75,7 +75,7 @@ class _AddThingPageState extends State<AddThingPage> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Adicionar Material",
           style: TextStyle(
             color: ForegroundColor,

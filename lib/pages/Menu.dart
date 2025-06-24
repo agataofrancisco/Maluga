@@ -20,7 +20,7 @@ class Menu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                child: Row(
+                child: const Row(
                   children: [
                     //Image.asset("lib/assets/logoMaluga4Semfundo.png", width: 50, height: 50,),
                     SizedBox(width: 5,),
@@ -37,30 +37,34 @@ class Menu extends StatelessWidget {
         
               Container(child: Row(
                 children: [
-                  ElevatedButton.icon(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (build) => const ProfilePage()));}, label: Icon(Icons.person, color: BaseColor,)),
+                  ElevatedButton.icon(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (build) => const ProfilePage()));}, label: const Icon(Icons.person, color: BaseColor,)),
                   Padding(
                     padding: const EdgeInsets.only(left: 2),
-                    child: IconButton(onPressed: (){}, icon: Icon(Icons.notifications, color: ForegroundColor,)),
+                    child: IconButton(onPressed: (){}, icon: const Icon(Icons.notifications, color: ForegroundColor,)),
                   )
                 ],
               )),
               //Icon(Icons.person)
             ],
           ),
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs:<Widget>[
                 Center(
                   child: Icon(Icons.list_outlined,color: ForegroundColor,size: 30,)
                 ),
-                /*Center(
+                /*
+                Center(
                   child: Icon(Icons.note_add_outlined,color: ForegroundColor,size: 30,)
-                ),*/
+                ),
+                */
                 Center(
                   child: Icon(Icons.pending_outlined,color: ForegroundColor,size: 30,)
                 ),
-                /*Center(
+                /*
+                Center(
                   child: Icon(Icons.feed_outlined,color: ForegroundColor,size: 30,)
-                ),*/
+                ),
+                */
           ]),
         ),
         body: const TabBarView(children: <Widget>[

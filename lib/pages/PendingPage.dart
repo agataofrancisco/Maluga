@@ -60,7 +60,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child: ListTile(
-                    title: Text(
+                    title: const Text(
                       "Tia Bela",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -82,7 +82,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child: ListTile(
-                    title: Text(
+                    title: const Text(
                       "Gelson",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -104,7 +104,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child: ListTile(
-                    title: Text(
+                    title: const Text(
                       "Alexandrina",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -125,7 +125,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child:ListTile(
-                    title: Text(
+                    title: const Text(
                       "Agatão",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -146,7 +146,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child:ListTile(
-                    title: Text(
+                    title: const Text(
                       "Agatão",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -177,7 +177,7 @@ class PendingPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: BaseColor,
                   ),
-                  child: ListTile(
+                  child: const ListTile(
                     title: Text(
                       "Maria",
                       style: TextStyle(
@@ -196,7 +196,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child:ListTile(
-                    title: Text(
+                    title: const Text(
                       "Agatão",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -217,7 +217,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child:ListTile(
-                    title: Text(
+                    title: const Text(
                       "Agatão",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -238,7 +238,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child:ListTile(
-                    title: Text(
+                    title: const Text(
                       "Agatão",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -259,7 +259,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child:ListTile(
-                    title: Text(
+                    title: const Text(
                       "Agatão",
                       style: TextStyle(
                         color: ForegroundColor,
@@ -280,7 +280,7 @@ class PendingPage extends StatelessWidget {
                     color: BaseColor,
                   ),
                   child:ListTile(
-                    title: Text(
+                    title: const Text(
                       "Agatão",
                       style: TextStyle(
                         color: ForegroundColor,

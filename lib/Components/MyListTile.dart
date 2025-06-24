@@ -23,7 +23,7 @@ class MylistTile extends StatelessWidget {
                       ListTile(
                         title:Text(
                           titulo,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: ForegroundColor,
                           ),
@@ -36,7 +36,7 @@ class MylistTile extends StatelessWidget {
                         ),
                         trailing: Text(
                           trallling,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: ForegroundColor
                           ),
                         ),

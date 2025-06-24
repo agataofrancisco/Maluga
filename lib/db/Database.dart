@@ -179,13 +179,13 @@ CREATE TABLE alugo_items (
   Future<void> createTable() async {
     final db = await instance.database;
     await db!.execute('''
-CREATE TABLE alugo_items (
-  id_item INTEGER PRIMARY KEY AUTOINCREMENT,
-  id_alugo INTEGER NOT NULL,         -- Este campo liga cada item ao seu aluguel
-  material TEXT NOT NULL,
-  quantity INTEGER NOT NULL,
-  FOREIGN KEY (id_alugo) REFERENCES alugos(id_alugo) ON DELETE CASCADE
-);''');
+    CREATE TABLE alugo_items (
+      id_item INTEGER PRIMARY KEY AUTOINCREMENT,
+      id_alugo INTEGER NOT NULL,         -- Este campo liga cada item ao seu aluguel
+      material TEXT NOT NULL,
+      quantity INTEGER NOT NULL,
+      FOREIGN KEY (id_alugo) REFERENCES alugos(id_alugo) ON DELETE CASCADE
+    );''');
     print("Tabela criada com sucesso.");
   }
   Future<Map<String, dynamic>?> getData(String table, int id) async {

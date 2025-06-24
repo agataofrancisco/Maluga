@@ -70,5 +70,4 @@ class FeedPage extends StatelessWidget {
       )
     );
   }
-  
 }

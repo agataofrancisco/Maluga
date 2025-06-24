@@ -7,7 +7,6 @@ import 'package:flutter_/Components/MyTextField.dart';
 import 'package:flutter_/Components/MyTextFromFieldReadonly.dart';
 import 'package:flutter_/db/Database.dart';
 import 'package:flutter_/db/Models/material_model.dart';
-import 'package:flutter_/pages/Menu.dart';
 import 'package:flutter_/pages/empty/EmptyMaterial.dart';
 import 'package:flutter_/services/NifValidator.dart';
 
@@ -112,7 +111,7 @@ Widget _quantidadestep(){
         return Column(
           children: [
              const Text("Alugador"),
-            MyTextFieldReadOnly(texto: namekilapeirocontroller.text,),
+            MyTextFieldReadOnly(texto: namealugadorcontroller.text),
             const Text("Pedido"),
             MyTextFieldReadOnly(texto: material.name),
             const Text("Preço"),
@@ -195,7 +194,7 @@ Widget _Resumo() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text(
+      const Text(
         "Resumo do Pedido",
         style: TextStyle(
           fontSize: 20,
@@ -206,7 +205,7 @@ Widget _Resumo() {
       const SizedBox(height: 10),
       Text(
         "Cliente: ${namekilapeirocontroller.text}",
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
           color: Colors.black54,
@@ -225,7 +224,7 @@ Widget _Resumo() {
             children: [
               Text(
                 "Pedido: ${material.name}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
@@ -233,14 +232,14 @@ Widget _Resumo() {
               ),
               Text(
                 "Quantidade: $quantity",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: Colors.black54,
                 ),
               ),
               Text(
                 "Total: ${total}Kz",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: Colors.black54,
                 ),
@@ -253,7 +252,7 @@ Widget _Resumo() {
       const SizedBox(height: 10),
       Text(
         "Data de devolução: ${dateController.text}",
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.black87,
@@ -261,7 +260,7 @@ Widget _Resumo() {
       ),
       Text(
         "Total Global: ${globalTotal}Kz",
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.black87,
@@ -338,13 +337,18 @@ void _loadMaterials() {
   }
 
   //FUNÇÃO QUE VERIRICA SE O NIF É VERDADEIRO
-  void _nifverify(String nif, void Function(VoidCallback) setDialogState) async { //O DIALOG É STATEFULL, POR ISSO PODEMOS ALTERAR O ESTADO DOS ELEMENTOS NELE
+  void _nifverify(String nif, void Function(VoidCallback) setDialogState) async {
+    isloading = true; 
+    //PARTE PARA TESTE
+    /*
+    final String nome = ValidarNif(nif) as String;
+   //O DIALOG É STATEFULL, POR ISSO PODEMOS ALTERAR O ESTADO DOS ELEMENTOS NELE
   setDialogState(() {
-      isloading = false; //APOS CONCLUIR, CASO DÊ CERTO REMOVE O LOADING
       showExtrafields = true; //MUDA O ESTADO DA VARIAVEL PARA TRUE HABILITANDO A APRESENTAÇÃO DE OUTROS CAMPOS
       verification = true;
-      //namecontroller.text = nome; // Preenche automaticamente o campo Nome
-    });
+      namealugadorcontroller.text = nome; // Preenche automaticamente o campo Nome
+
+    });*/
 
   if (nif.length < 14) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -426,6 +430,7 @@ void InserirAlugo() async {
     'phone_number': telefoneController.text,
     'classification': 0.0,
   };
+  
   await db.insert('alugador', alugadorData);
 
   // 5. Inserir no "historico"
@@ -775,13 +780,13 @@ void InserirAlugo() async {
       future: _materials, 
       builder: (context, snapshot){
         if (snapshot.connectionState == ConnectionState.waiting){
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(color: BaseColor,),
           );
         }else if(snapshot.hasError){
           return Center(child: Text("ERRO ${snapshot.error}"));
         }else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return EmptyMaterial();
+          return const EmptyMaterial();
         } else {
           final materials_ = snapshot.data!;
           return Scaffold(
@@ -821,7 +826,7 @@ void InserirAlugo() async {
                             child: ListTile(
                               title: Text(
                                 material.name,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: ForegroundColor,
                                 ),
@@ -854,20 +859,20 @@ void InserirAlugo() async {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: FloatingActionButton(onPressed: (){dialogoKilapeiroCad();},backgroundColor:BaseColor, child: Icon(Icons.send,color: ForegroundColor,),),
+                  child: FloatingActionButton(onPressed: (){dialogoKilapeiroCad();},backgroundColor:BaseColor, child: const Icon(Icons.send,color: ForegroundColor,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: FloatingActionButton(onPressed: (){},backgroundColor:BaseColor, child: Icon(Icons.takeout_dining,color: ForegroundColor,),),
+                  child: FloatingActionButton(onPressed: (){},backgroundColor:BaseColor, child: const Icon(Icons.takeout_dining,color: ForegroundColor,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: FloatingActionButton(onPressed: (){AddMaterial();},backgroundColor:BaseColor, child: Icon(Icons.edit,color: ForegroundColor,),),
+                  child: FloatingActionButton(onPressed: (){AddMaterial();},backgroundColor:BaseColor, child: const Icon(Icons.edit,color: ForegroundColor,),),
                 ),
               ],
             ) : Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: FloatingActionButton(onPressed: (){AddMaterial();},backgroundColor:BaseColor, child: Icon(Icons.add,color: ForegroundColor,),),
+                  child: FloatingActionButton(onPressed: (){AddMaterial();},backgroundColor:BaseColor, child: const Icon(Icons.add,color: ForegroundColor,),),
                 ),
           );
           }

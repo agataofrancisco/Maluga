@@ -134,7 +134,7 @@ class _EmptyMaterialState extends State<EmptyMaterial> {
           ],
         ),
       ),
-        floatingActionButton:  FloatingActionButton(onPressed: (){_AddMaterial();},backgroundColor:BaseColor, child: Icon(Icons.add,color: ForegroundColor,),),
+        floatingActionButton:  FloatingActionButton(onPressed: (){_AddMaterial();},backgroundColor:BaseColor, child: const Icon(Icons.add,color: ForegroundColor,),),
 
     );
   }

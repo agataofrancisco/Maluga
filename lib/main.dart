@@ -3,7 +3,7 @@ import 'package:flutter_/Components/Colors.dart';
 import 'package:flutter_/pages/Menu.dart';
 
 void main(){
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
